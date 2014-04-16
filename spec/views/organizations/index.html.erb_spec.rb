@@ -73,5 +73,9 @@ describe "organizations/index.html.erb", :js => true do
     rendered.should have_xpath "//script[contains(.,'Gmaps.map.map_options.zoom = 12')]"
     rendered.should have_xpath "//script[contains(.,'Gmaps.map.map_options.auto_adjust = false')]"
   end
+  it "creates a placeholder for google adverts" do
+    render template: "organizations/index", layout: "layouts/application"
+    rendered.should contain "google_ads"
+  end
 
 end
